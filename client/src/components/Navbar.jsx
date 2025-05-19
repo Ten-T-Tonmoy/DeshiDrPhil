@@ -2,6 +2,15 @@ import React from "react";
 //from daisy ui
 import logo from "../assets/logo.png";
 import { FaBars, FaSearch } from "react-icons/fa";
+import {
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaTwitch,
+} from "react-icons/fa";
+import { GiShoppingBag } from "react-icons/gi";
+import { FaChevronDown } from "react-icons/fa";
 
 /**
  * Home
@@ -31,39 +40,135 @@ const Navbar = () => {
     <div className="drawer ">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content  flex flex-col">
-        {/* Navbar */}
-        <div className="navbar bg-primary w-full ">
+        {/* -----------------------Navbar------------------------ */}
+        <div className="navbar lg:px-[12vw] pr-4 bg-violet-900 w-full flex justify-between">
           {/**fricking nav button */}
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
               aria-label="open sidebar"
-              className="btn btn-square btn-ghost"
+              className="btn hover:bg-slate-500/15 btn-ghost"
             >
               <FaBars className="scale-150" />
             </label>
           </div>
 
-          <img
-            src={logo}
-            className="
+          <div>
+            <img
+              src={logo}
+              className="
             h-[60px]
             "
-            alt=""
-          />
-          <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal">
-              {/* Navbar menu content here */}
-              <li>
-                <a>Navbar Item 1</a>
-              </li>
-              <li>
-                <a>Navbar Item 2</a>
-              </li>
-            </ul>
+              alt=""
+            />
+          </div>
+          {/**------Do not show while nav bar showing--------- */}
+
+          <div className="flex justify-center gap-8 items-center">
+            <div className="hidden flex-none lg:block">
+              <ul className="menu gap-4 menu-horizontal">
+                {/* menu content here */}
+
+                <div
+                  className="pt-1
+                font-black text-[1.2rem] hover:text-warning
+                transition duration-200 cursor-pointer
+                "
+                >
+                  Home
+                </div>
+
+                <div className="dropdown dropdown-hover">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="pt-1
+                font-black text-[1.2rem] hover:text-warning
+                transition duration-200 cursor-pointer"
+                  >
+                    Services
+                  </div>
+
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu bg-warning 
+                    font-black text-[1.05rem] rounded-box z-1 
+                    duration-200
+                    w-52 p-2 shadow-sm"
+                  >
+                    <li>
+                      <a>Therapy</a>
+                    </li>
+                    <li>
+                      <a>Store</a>
+                    </li>
+                    <li>
+                      <a>Programme</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="dropdown dropdown-hover">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="pt-1
+                font-black text-[1.2rem] hover:text-warning
+                transition duration-200 cursor-pointer"
+                  >
+                    About Us
+                  </div>
+
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu bg-warning 
+                    font-black text-[1.05rem] rounded-box z-1 
+                    duration-200
+                    w-52 p-2 shadow-sm"
+                  >
+                    <li>
+                      <a>About</a>
+                    </li>
+                    <li>
+                      <a>Resource</a>
+                    </li>
+                    <li>
+                      <a>FAQ</a>
+                    </li>
+                    <li>
+                      <a>Blog</a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className=" pt-1
+                font-black text-[1.2rem] hover:text-warning
+                transition duration-200 cursor-pointer
+                "
+                >
+                  contact
+                </div>
+                <hr className="border-r pb-2 border-gray-500 h-10 mx-2 " />
+
+                <div>
+                  <button className="btn rounded-lg  text-gray-200 font-black btn-warning w-[100%] ">
+                    Start Here
+                  </button>
+                </div>
+                <div>
+                  <button className="btn text-gray-200  rounded-lg font-black  btn-error  w-[100%]">
+                    Login
+                  </button>
+                </div>
+              </ul>
+            </div>
+
+            <GiShoppingBag
+              className="scale-[250%]  bg-secondary rounded-full p-1 
+          cursor-pointer hover:bg-secondar hover:bg-pink-600"
+            />
           </div>
         </div>
-        {/* Page content here */}
+        {/* navtop ends and  Page content here */}
         Content
       </div>
       <div className="drawer-side ">
@@ -74,8 +179,9 @@ const Navbar = () => {
         ></label>
         <ul className="menu bg-violet-950 min-h-full w-[60vw] sm:w-64 items-center ">
           {/* Sidebar content here */}
-          <li>
-            <div className="join mt-8 mb-2">
+
+          <div className="join mt-8 mb-6 px-2">
+            <div>
               <label className="input text-black bg-white validator join-item">
                 <input
                   type="email"
@@ -85,47 +191,99 @@ const Navbar = () => {
                   required
                 />
               </label>
-              <button className="btn btn-warning join-item">
-                <FaSearch className="scale-125  " />
-              </button>
             </div>
-          </li>
-          <hr className="w-full bg-gray-500 " />
 
-          {/**search box goes here */}
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Contact</a>
-          </li>
+            <button className="btn btn-warning join-item">
+              <FaSearch className="scale-125  " />
+            </button>
+          </div>
+
+          {/**search box end here */}
+          <div
+            className="border-t border-gray-500
+           py-4 px-2 hover:bg-slate-200/15 rounded-md w-full
+          cursor-pointer font-black
+          "
+          >
+            <p className="mx-2">Home</p>
+          </div>
+          <div
+            className="border-t border-gray-500
+          py-4 px-2 hover:bg-slate-200/15 rounded-md w-full
+          cursor-pointer font-black
+          "
+          >
+            <p className="mx-2">Contact</p>
+          </div>
           {/**Accordian shits */}
-          <li>
-            <div className="collapse p-0 ">
-              <input type="checkbox" className="peer " />
-              <div
-                className="collapse-title bg-violet-950 text-primary-content 
-              peer-checked:bg-secondary peer-checked:text-secondary-content text-center"
-              >
-                Services
-              </div>
-              <div
-                className="collapse-content bg-primary text-primary-content 
-              peer-checked:bg-secondary "
-              >
-                Click the "Sign Up" button in the top right corner and follow
-                the registration process.
-              </div>
+          <div className="collapse border-t border-gray-500 ">
+            <input type="checkbox" className="peer " />
+            <div
+              className="collapse-title  bg-violet-950 text-primary-content 
+              peer-checked:bg-primary peer-checked:text-secondary-content
+              font-black "
+            >
+              Services
             </div>
-          </li>
-          <li></li>
+            <div
+              className="collapse-content bg-primary text-primary-content 
+              font-mono
+              peer-checked:bg-primary "
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing
+            </div>
+          </div>
           {/**Accordian shits */}
-          <li>
-            <button className="btn btn-warning w-[100%] ">Start Here</button>
-          </li>
-          <li>
-            <button className="btn btn-error ">Login</button>
-          </li>
+          <div
+            className="border-t border-gray-500 box-border
+           py-4  px-2 hover:bg-slate-200/15 rounded-md w-full
+          cursor-pointer font-black 
+          "
+          >
+            <p className="mx-2">Sign Up</p>
+          </div>
+          <div
+            className="border-t border-gray-500 box-border
+           py-5  px-2 hover:bg-slate-200/15 rounded-md w-full
+          cursor-pointer font-black 
+          "
+          >
+            <div className="flex justify-around">
+              <FaGithub
+                className="scale-[170%] hover:text-primary
+              "
+              />
+              <FaTwitch
+                className="scale-[170%] hover:text-primary
+              "
+              />
+              <FaTwitter
+                className="scale-[170%] hover:text-primary
+              "
+              />
+              <FaInstagram
+                className="scale-[170%] hover:text-primary
+              "
+              />
+              <FaLinkedin
+                className="scale-[170%] hover:text-primary
+              "
+              />
+            </div>
+          </div>
+
+          <hr className="border-t pb-2  border-gray-500 w-full" />
+          <button
+            className="btn mb-4 text-gray-200 font-black btn-warning w-[100%] 
+          my-2 "
+          >
+            Start Here
+          </button>
+          <hr className="border-t pt-2 border-gray-500 w-full" />
+          <button className="btn text-gray-200 font-black mb-4 btn-error my-2 w-[100%]">
+            Login
+          </button>
+          <hr className="border-t pt-2 border-gray-500 w-full" />
         </ul>
       </div>
     </div>
