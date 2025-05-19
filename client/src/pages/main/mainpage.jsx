@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import Methods from "../methods/Methods";
 
 const page = () => {
   return (
@@ -15,6 +16,8 @@ const page = () => {
         </Link>
         <button className="btn btn-secondary">Click Me</button>
       </div>
+
+      <Methods />
     </div>
   );
 };
